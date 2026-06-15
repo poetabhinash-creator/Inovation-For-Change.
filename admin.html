@@ -811,7 +811,25 @@
 </div><!-- /admin-screen -->
 
 <div class="toast" id="toast"></div>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+import { getDatabase } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-database.js";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyCcet1fHCSA6sZHqdRHXc94QXE7usyWd-g",
+  authDomain: "inovation-for-change.firebaseapp.com",
+  databaseURL: "https://inovation-for-change-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "inovation-for-change",
+  storageBucket: "inovation-for-change.firebasestorage.app",
+  messagingSenderId: "287339987638",
+  appId: "1:287339987638:web:26309fc116b54e729b1c17"
+};
+
+const app = initializeApp(firebaseConfig);
+window.db = getDatabase(app);
+
+console.log("Firebase Connected Successfully");
+</script>
 <script>
   // ══════════════════════════════════════════
   //  LOCAL STORAGE DATA LAYER
