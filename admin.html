@@ -835,7 +835,14 @@ console.log("Firebase Connected Successfully");
   //  LOCAL STORAGE DATA LAYER
   //  (Replace with Firebase calls once configured)
   // ══════════════════════════════════════════
-
+async function testFirebase() {
+  try {
+    console.log(window.db);
+    alert("Firebase Connected Successfully!");
+  } catch (e) {
+    alert("Firebase Error: " + e.message);
+  }
+}
   const DB = {
     get: (key) => JSON.parse(localStorage.getItem('mic_' + key) || '[]'),
     set: (key, val) => localStorage.setItem('mic_' + key, JSON.stringify(val)),
@@ -1138,7 +1145,22 @@ console.log("Firebase Connected Successfully");
       toast('⚠️ Invalid JSON. Check the format.');
     }
   }
+function saveFirebaseConfig() {
+   ...
+}
 
+function testFirebase() {
+  if (window.db) {
+    alert("Firebase Connected Successfully!");
+  } else {
+    alert("Firebase Not Connected!");
+  }
+}
+
+testFirebase();
+
+// Load saved firebase config if any
+const savedConfig = ...
   // Load saved firebase config if any
   const savedConfig = localStorage.getItem('mic_firebase_config');
   if (savedConfig) document.getElementById('fb-config').value = savedConfig;
