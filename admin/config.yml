@@ -1,0 +1,17 @@
+backend:
+  name: github
+  repo: poetabhinash-creator/Inovation-For-Change
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "events"
+    label: "Events"
+    folder: "_events"
+    create: true
+
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "body", widget: "markdown"}
